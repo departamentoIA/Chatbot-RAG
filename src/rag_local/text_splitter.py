@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 from dataclasses import dataclass
-
 from .document_loader import Document
 
 
@@ -31,5 +29,6 @@ def split_documents(documents: list[Document], chunk_size: int, chunk_overlap: i
     chunks: list[Chunk] = []
     for document in documents:
         for idx, text in enumerate(split_text(document.text, chunk_size, chunk_overlap)):
-            chunks.append(Chunk(text=text, source=document.source, chunk_id=idx))
+            chunks.append(
+                Chunk(text=text, source=document.source, chunk_id=idx))
     return chunks

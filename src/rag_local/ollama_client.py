@@ -1,8 +1,6 @@
 from __future__ import annotations
-
 import requests
 from typing import Iterable
-
 from .config import settings
 
 

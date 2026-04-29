@@ -1,7 +1,5 @@
 from __future__ import annotations
-
 import argparse
-
 from .config import settings
 from .document_loader import load_documents
 from .ollama_client import OllamaClient
@@ -12,7 +10,8 @@ from .vector_store import FaissVectorStore
 def build_index(docs_dir: str, index_dir: str) -> None:
     documents = load_documents(docs_dir)
     if not documents:
-        raise ValueError("No se encontraron documentos .txt, .md o .pdf con contenido")
+        raise ValueError(
+            "No se encontraron documentos .txt, .md o .pdf con contenido")
 
     chunks = split_documents(
         documents,
@@ -33,9 +32,12 @@ def build_index(docs_dir: str, index_dir: str) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Construye un índice FAISS para RAG local")
-    parser.add_argument("--docs-dir", default="data/docs", help="Directorio con documentos")
-    parser.add_argument("--index-dir", default="data/indexes/main", help="Directorio de salida del índice")
+    parser = argparse.ArgumentParser(
+        description="Construye un índice FAISS para RAG local")
+    parser.add_argument("--docs-dir", default="data/docs",
+                        help="Directorio con documentos")
+    parser.add_argument("--index-dir", default="data/indexes/main",
+                        help="Directorio de salida del índice")
     args = parser.parse_args()
     build_index(args.docs_dir, args.index_dir)
 

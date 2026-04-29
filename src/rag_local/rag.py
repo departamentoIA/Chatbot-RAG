@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 from .config import settings
 from .memory import ConversationMemory
 from .ollama_client import OllamaClient
