@@ -13,27 +13,23 @@ Requirements: 12 GB RAM memory at least, no GPU needed.
 Chatbot-RAG/
 ├── main.py
 ├── .gitignore
-├── env/                # Virtual enviroment (not provided)
+├── env/                    # Virtual enviroment (not provided)
 └── requirements.txt
-└── src/rag_local       # Contains all needed files (Python package)
-    └── __init__.py     # Specifies that folder 'src' is a Python package
-    └── build_index.py  # To convert data to emdeddings
-    └── config.py       # Set your configuration variables here
-    └── document_loader.py      # To transform PDF to text
-    └── memory.py       # To save the conversation into a JSON file
-    └── ollama_client.py        # To launch the model
-    └── rag.py          # RAG configuration. SYSTEM_INSTRUCTIONS are here
-    └── text_splitter.py        # To split the text into many chunks
-    └── vector_store.py         # To manage the FAISS indexes
+└── src/rag_local           # Contains all needed files (Python package)
+    └── __init__.py         # Specifies that folder 'src' is a Python package
+    └── build_index.py      # To convert data to emdeddings
+    └── config.py           # Set your configuration variables here
+    └── document_loader.py  # To transform PDF to text
+    └── memory.py           # To save the conversation into a JSON file
+    └── ollama_client.py    # To launch the model
+    └── rag.py              # RAG configuration. SYSTEM_INSTRUCTIONS are here
+    └── text_splitter.py    # To split the text into many chunks
+    └── vector_store.py     # To manage the FAISS indexes
 └── data
-    └── docs            # Paste your documents `.txt`, `.md` or `.pdf` here
-    └── indexes/main    # To save the vector DB indexes
-    └── memory          # JSON file to save the conversation
+    └── docs                # Paste your documents `.txt`, `.md` or `.pdf` here
+    └── indexes/main        # To save the vector DB indexes
+    └── memory              # JSON file to save the conversation
 ```
-
-
-## ✨ Details
-
 
 ## 🚀 How to run locally
 1. Clone this repository:
@@ -52,7 +48,7 @@ For Linux:
 ```bash
 python -m venv env && source env/bin/activate && pip install -r requirements.txt
 ```
-3. Install Ollama.
+3. Download and install Ollama from: https://ollama.com/download.
 4. Download the model and the embedder. In a terminal run:
 ```bash
 ollama pull llama3
